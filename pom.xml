@@ -33,6 +33,34 @@
 				<configuration>
 				</configuration>
 			</plugin>
+			<plugin>
+  <groupId>org.mule.tools.maven</groupId>
+  <artifactId>mule-maven-plugin</artifactId>
+  <version>3.3.2</version>
+  <extensions>true</extensions>
+  <configuration>
+    <cloudHubDeployment>
+      <uri>https://anypoint.mulesoft.com</uri>
+      <muleVersion>${app.runtime}</muleVersion>
+      <username>ram4ads</username>
+      <password>Learn@1234</password>
+      <applicationName>app-projectcicd</applicationName>
+      <environment>Sandbox</environment>
+    <!--   <region>${region}</region> -->
+      <workers>1</workers>
+      <workerType>Micro</workerType>
+     </cloudHubDeployment>
+  </configuration>
+  <executions>
+  <execution>
+  <id>deploy</id>
+  <phase>deploy</phase>
+  <goals>
+  	<goal>deploy</goal>
+  </goals>
+  </execution>
+  </executions>
+</plugin>
 		</plugins>
 	</build>
 
